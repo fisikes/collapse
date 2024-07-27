@@ -1,13 +1,14 @@
 package org.fisikes.netty;
 
+import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
+import io.netty.util.CharsetUtil;
 import lombok.extern.slf4j.Slf4j;
 
-import java.nio.ByteBuffer;
 
 /**
  * @author yudong.li
@@ -20,8 +21,8 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelRead(final ChannelHandlerContext ctx, final Object msg) throws Exception {
-        final ByteBuffer in = (ByteBuffer) msg;
-        log.info("Server received: {}", in.toString());
+        final ByteBuf in = (ByteBuf) msg;
+        log.info("Server received: {}", in.toString(CharsetUtil.UTF_8));
         ctx.write(in);
     }
 

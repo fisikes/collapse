@@ -19,12 +19,17 @@ public class EchoClientHandler extends SimpleChannelInboundHandler<ByteBuf> {
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) {
-        ctx.writeAndFlush(Unpooled.copiedBuffer("Netty rocks!", CharsetUtil.UTF_8));
+        ctx.writeAndFlush(Unpooled.copiedBuffer("宝玉，我问你：至贵者是‘宝’，至坚者是‘玉’。尔有何贵？尔有何坚？", CharsetUtil.UTF_8));
     }
 
+    // this method is called whenever data is received
     @Override
     protected void channelRead0(final ChannelHandlerContext channelHandlerContext, final ByteBuf byteBuf) throws Exception {
-        log.info("client received: {}", byteBuf.toString());
+
+        int bytesLen = byteBuf.readableBytes();
+        log.info("Received {} bytes", bytesLen);
+
+        log.info("client received: {}", byteBuf.toString(CharsetUtil.UTF_8));
     }
 
     @Override

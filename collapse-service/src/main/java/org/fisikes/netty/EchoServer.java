@@ -23,7 +23,7 @@ public class EchoServer {
 
     @SneakyThrows
     public static void main(String[] args) {
-        int port = 8080;
+        int port = 19000;
         new EchoServer(port).start();
     }
 
