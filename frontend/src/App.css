@@ -3,17 +3,32 @@
   display: flex;
 }
 
-.left, .right {
-  flex: 1;
+
+.draggable-card {
+  display: inline-block;
   padding: 20px;
-  border: 1px solid #ccc;
   margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  cursor: move;
 }
 
-.left {
-  background-color: #f0f0f0;
+.business-component {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.right {
-  background-color: #e0e0e0;
+.draggable-box {
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  height: 600px;
+  align-items: center;
+  border: 1px solid #000;
+  cursor: move;
 }

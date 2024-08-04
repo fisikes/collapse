@@ -44,7 +44,7 @@ const NamespaceComponent: React.FC<NamespaceComponentProps> = ({ namespace }) =>
 
   return (
     <div>
-      <h1>Namespace {namespace}</h1>
+      <h5>Namespace {namespace}</h5>
       <input
         type="text"
         value={message}
@@ -53,7 +53,7 @@ const NamespaceComponent: React.FC<NamespaceComponentProps> = ({ namespace }) =>
       />
       <button onClick={sendMessage}>Send Message</button>
       <div>
-        <h2>Received Messages</h2>
+        <h5>Received Messages</h5>
         <ul>
           {receivedMessages.map((msg, index) => (
             <li key={index}>{msg}</li>
